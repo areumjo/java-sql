@@ -35,7 +35,11 @@ Answer the following data queries. Keep track of the SQL you write by pasting it
 
 ### find all customers that live in London. Returns 6 records.
 > This can be done with SELECT and WHERE clauses
-
+```sql
+SELECT company_name, contact_name, city
+FROM customers
+WHERE city = 'London'
+```
 
 ### find all customers with postal code 1010. Returns 3 customers.
 > This can be done with SELECT and WHERE clauses
