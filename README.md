@@ -160,6 +160,45 @@ Take the following data and normalize it into a 3NF database.
 | Bob         | Joe      | Horse    |            |            |            |            | No          | No           |
 | Sam         | Ginger   | Dog      | Miss Kitty | Cat        | Bubble     | Fish       | Yes         | No           |
 
+
+### 1NF - pets broken into separate rows
+* Person Table
+| Person Id | Person Name | Fenced Yard | City Deweller |
+|-----------|-------------|-------------|---------------|
+| 1         | Jane        | No          | Yes           |
+| 2         | Bob         | No          | No            |
+| 3         | Sam         | Yes         | No            |
+
+* Pet Table
+| Pet Id | Person Id | Pet Name   | Pet Type |
+|--------|-----------|------------|----------|
+| 1      | 1         | Ellie      | Dog      |
+| 2      | 1         | Tiger      | Cat      |
+| 3      | 1         | Toby       | Turtle   |
+| 4      | 2         | Joe        | Horse    |
+| 5      | 3         | Ginger     | Dog      |
+| 6      | 3         | Miss Kitty | Cat      |
+| 7      | 3         | Bubble     | Fish     |
+
+### 2NF - Fenced Yard is moved to pet table
+* Person Table
+| Person Id | Person Name | City Deweller |
+|-----------|-------------|---------------|
+| 1         | Jane        | Yes           |
+| 2         | Bob         | No            |
+| 3         | Sam         | No            |
+
+* Pet Table
+| Pet Id | Person Id | Pet Name   | Pet Type | Fenced Yard |
+|--------|-----------|------------|----------|-------------|
+| 1      | 1         | Ellie      | Dog      | No          |
+| 2      | 1         | Tiger      | Cat      | No          |
+| 3      | 1         | Toby       | Turtle   | No          |
+| 4      | 2         | Joe        | Horse    | No          |
+| 5      | 3         | Ginger     | Dog      | No          |
+| 6      | 3         | Miss Kitty | Cat      | No          |
+| 7      | 3         | Bubble     | Fish     | Yes         |
+
 ---
 ## Stretch Goals
 
